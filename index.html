@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Namu Sate House — Sate Rumahan, Siap Disajikan</title>
+<meta name="description" content="Namu Sate House: sate taichan, sate lilit, sei & katsu rumahan. Sistem PO mingguan, vacuum-sealed, kirim ke Jabodetabek.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16100b; --char:#1f1610; --espresso:#2b1d12; --brown:#553f0b; --brown-2:#6e5214;
+  --cream:#f7f0e3; --cream-2:#efe4d0; --ember:#e8742c; --ember-2:#ff9a4d; --muted:#a8977f;
+  --wa:#25d366; --radius:22px;
+  --display:"Fraunces",Georgia,serif; --sans:"Plus Jakarta Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-size:15px;font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,90vw);margin-inline:auto}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ember)}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3.2vw,2.5rem)}
+h2 em,h1 em{font-style:italic;font-weight:500;color:var(--ember-2)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.5rem;border-radius:999px;font-weight:700;font-size:.98rem;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;border:0}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:var(--wa);color:#06290f;box-shadow:0 10px 30px -10px rgba(37,211,102,.7)}
+.btn-ghost{background:rgba(255,255,255,.08);color:var(--cream);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(6px)}
+.btn-dark{background:var(--espresso);color:var(--cream)}
+.wa-ico{width:20px;height:20px;flex:none}
+
+/* NAV */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s,padding .3s;padding:18px 0}
+.nav.scrolled{background:rgba(22,16,11,.88);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(255,255,255,.06);padding:10px 0}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-logo img{height:46px;width:auto}
+.nav-links{display:flex;gap:1.8rem;color:var(--cream);font-weight:600;font-size:.92rem}
+.nav-links a{opacity:.82}.nav-links a:hover{opacity:1;color:var(--ember-2)}
+.nav-right{display:flex;align-items:center;gap:.7rem}
+.lang{display:flex;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:3px}
+.lang button{background:none;border:0;color:var(--cream);font:700 .78rem var(--sans);padding:.45rem .7rem;border-radius:999px;cursor:pointer;opacity:.7}
+.lang button.on{background:var(--cream);color:var(--ink);opacity:1}
+.nav .btn{padding:.65rem 1.1rem;font-size:.88rem}
+
+/* HERO */
+.hero{position:relative;min-height:82svh;display:flex;align-items:flex-end;color:var(--cream);background:var(--ink);overflow:hidden}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:
+  radial-gradient(ellipse at 75% 40%,rgba(232,116,44,.18),transparent 55%),
+  linear-gradient(180deg,rgba(22,16,11,.55) 0%,rgba(22,16,11,.35) 35%,rgba(22,16,11,.92) 82%,var(--ink) 100%)}
+.hero .wrap{position:relative;z-index:2;padding:120px 0 56px}
+.badge{display:inline-flex;align-items:center;gap:.55rem;background:rgba(232,116,44,.16);border:1px solid rgba(232,116,44,.45);color:#ffd2b0;padding:.45rem .9rem;border-radius:999px;font-size:.82rem;font-weight:700}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ember-2);box-shadow:0 0 0 0 rgba(255,154,77,.7);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(255,154,77,0)}100%{box-shadow:0 0 0 0 rgba(255,154,77,0)}}
+.hero h1{font-size:clamp(2.2rem,4.6vw,3.8rem);margin:1rem 0 .9rem;max-width:15ch}
+.hero p.lead{font-size:clamp(.98rem,1.3vw,1.08rem);max-width:54ch;color:#e9dcc6}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.hero-meta{display:flex;flex-wrap:wrap;gap:2.2rem;margin-top:2.4rem;padding-top:1.3rem;border-top:1px solid rgba(255,255,255,.12)}
+.hero-meta div b{display:block;font-family:var(--display);font-size:1.15rem;color:#fff}
+.hero-meta div span{font-size:.84rem;color:var(--muted)}
+
+/* MARQUEE */
+.marquee{background:var(--ember);color:var(--ink);overflow:hidden;white-space:nowrap;padding:14px 0;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:.9rem}
+.marquee-track{display:inline-flex;gap:2.4rem;animation:scroll 28s linear infinite}
+.marquee-track span::after{content:"✦";margin-left:2.4rem;opacity:.6}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* STORY */
+section{padding:80px 0}
+.story .wrap{display:grid;grid-template-columns:.85fr 1fr;gap:64px;align-items:center}
+.story-visual{position:relative}
+.story-visual .main{border-radius:var(--radius);aspect-ratio:1/1;object-fit:cover;width:100%;box-shadow:0 30px 60px -30px rgba(43,29,18,.5)}
+.story-visual .float{position:absolute;right:-28px;bottom:-34px;width:46%;border-radius:18px;border:6px solid var(--cream);aspect-ratio:1;object-fit:cover;box-shadow:0 20px 40px -20px rgba(0,0,0,.45)}
+.story-visual .stamp{position:absolute;left:-22px;top:28px;background:var(--brown);color:var(--cream);border-radius:16px;padding:14px 18px;font-weight:700;font-size:.82rem;box-shadow:0 14px 30px -14px rgba(0,0,0,.5)}
+.stamp b{display:block;font-family:var(--display);font-size:1.6rem;line-height:1}
+.story h2{margin:.7rem 0 1.4rem}
+.word{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap;margin:1.6rem 0;padding:1.3rem 1.5rem;background:var(--cream-2);border-left:4px solid var(--ember);border-radius:0 14px 14px 0}
+.word .big{font-family:var(--display);font-size:1.6rem;font-weight:700;color:var(--brown)}
+.word .big span{color:var(--ember)}
+.word small{color:#6d5a44;font-size:.92rem}
+.story p{color:#4a3a2a;margin-bottom:1rem;font-size:.98rem}
+.chef{display:flex;gap:1rem;align-items:flex-start;margin-top:1.6rem;padding:1.2rem;border:1px solid #e0d2ba;border-radius:16px;background:#fff8ec}
+.chef .ico{width:46px;height:46px;border-radius:12px;background:var(--espresso);display:grid;place-items:center;flex:none;font-size:1.4rem}
+.chef b{display:block}
+.chef span{font-size:.93rem;color:#6d5a44}
+
+/* MENU */
+.menu{background:var(--ink);color:var(--cream);position:relative}
+.menu::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 0%,rgba(232,116,44,.14),transparent 45%);pointer-events:none}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:3rem;flex-wrap:wrap;position:relative}
+.sec-head p{max-width:44ch;color:var(--muted)}
+.menu-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.card{background:var(--char);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-6px);border-color:rgba(232,116,44,.5)}
+.card-img{aspect-ratio:1/1;overflow:hidden;position:relative}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img .tag{position:absolute;top:14px;left:14px;background:rgba(22,16,11,.75);backdrop-filter:blur(6px);color:#ffd2b0;font-size:.72rem;font-weight:700;padding:.35rem .7rem;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
+.card-body{padding:1.3rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.card h3{font-size:1.25rem}
+.card p{font-size:.92rem;color:#bcae98;flex:1}
+.card .price{display:flex;justify-content:space-between;align-items:center;margin-top:.6rem;padding-top:.9rem;border-top:1px dashed rgba(255,255,255,.12);font-size:.85rem;color:var(--muted)}
+.card .price a{color:var(--ember-2);font-weight:700}
+.card .price a:hover{text-decoration:underline}
+
+/* WHY */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:2.4rem}
+.why{background:#fff;border:1px solid #eadcc4;border-radius:var(--radius);padding:1.8rem 1.5rem}
+.why .n{width:52px;height:52px;border-radius:14px;background:var(--cream-2);display:grid;place-items:center;font-size:1.5rem;margin-bottom:1.1rem}
+.why h3{font-size:1.25rem;margin-bottom:.5rem}
+.why p{font-size:.93rem;color:#6d5a44}
+.center{text-align:center;max-width:720px;margin-inline:auto}
+.center p{color:#6d5a44;margin-top:1rem}
+
+/* HOW */
+.how{background:var(--brown);color:var(--cream);position:relative;overflow:hidden}
+.how::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,154,77,.25),transparent 70%)}
+.how .center p{color:#e3d2b1}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:3.4rem;position:relative;z-index:1;counter-reset:s}
+.step{background:rgba(22,16,11,.28);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:1.8rem 1.5rem;position:relative}
+.step::before{counter-increment:s;content:"0" counter(s);font-family:var(--display);font-size:2rem;font-weight:700;color:var(--ember-2);line-height:1;display:block;margin-bottom:1rem}
+.step h3{font-size:1.2rem;margin-bottom:.4rem}
+.step p{font-size:.92rem;color:#e3d2b1}
+.schedule{margin:2.6rem auto 0;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:1}
+.pill{background:var(--cream);color:var(--ink);border-radius:999px;padding:.7rem 1.2rem;font-weight:700;font-size:.9rem}
+.pill.alt{background:var(--ember);}
+
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:220px 220px;gap:14px;margin-top:3rem}
+.gallery-grid figure{border-radius:var(--radius);overflow:hidden;position:relative}
+.gallery-grid figure:first-child{grid-row:span 2}
+.gallery-grid figure:nth-child(4){grid-column:span 2}
+.gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gallery-grid figure:hover img{transform:scale(1.05)}
+.gallery-grid figcaption{position:absolute;left:14px;bottom:14px;background:rgba(22,16,11,.72);color:var(--cream);font-size:.8rem;font-weight:600;padding:.4rem .8rem;border-radius:999px;backdrop-filter:blur(6px)}
+
+/* FAQ */
+.faq{background:var(--cream-2)}
+.faq .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px}
+.faq p.sub{color:#6d5a44;margin-top:1rem}
+details{background:#fff;border-radius:16px;padding:1.2rem 1.4rem;margin-bottom:12px;border:1px solid #e6d6bc}
+summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--ember);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin-top:.8rem;color:#5d4b37;font-size:.96rem}
+
+/* CTA */
+.cta{background:var(--ink);color:var(--cream);text-align:center;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 120%,rgba(232,116,44,.35),transparent 60%)}
+.cta .wrap{position:relative}
+.cta img.logo{width:min(220px,60vw);margin:0 auto 2rem}
+.cta h2{max-width:16ch;margin-inline:auto}
+.cta p{color:#cbbba3;margin:1.2rem auto 2rem;max-width:50ch}
+.cta .contact{margin-top:1.4rem;font-size:.9rem;color:var(--muted)}
+
+footer{background:#0f0b07;color:var(--muted);padding:34px 0;font-size:.86rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+.fab{position:fixed;right:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.8);transition:transform .2s}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:30px;height:30px}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .nav-links{display:none}
+  .story .wrap,.faq .wrap{grid-template-columns:1fr;gap:56px}
+  .menu-grid,.why-grid,.steps{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px 220px}
+  .gallery-grid figure:first-child{grid-row:span 1;grid-column:span 2}
+  .gallery-grid figure:nth-child(4){grid-column:span 2}
+}
+@media (max-width:560px){
+  section{padding:80px 0}
+  .nav .btn span{display:none}
+  .nav-logo img{height:38px}
+  .menu-grid,.why-grid,.steps{grid-template-columns:1fr}
+  .hero-meta{gap:1.4rem}
+  .story-visual .float{right:-8px;bottom:-24px}
+  .story-visual .stamp{left:-6px}
+  .fab{width:54px;height:54px;right:14px;bottom:14px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute"><symbol id="wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.1c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.2 1.3-4-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.4 9.8 10.2 5.1 16 5.1s10.6 4.7 10.6 10.5S21.8 26.2 16 26.2zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.9-1.7-2.2-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.7 5.8 5.1 2.9 1.1 3.4.9 4.1.8.6-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1 0-.3-.1-.6-.3z"/></symbol></svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="nav-logo"><img src="assets/logo.png" alt="Namu Sate House"></a>
+    <nav class="nav-links">
+      <a href="#cerita" data-i18n="nav_story">Cerita</a>
+      <a href="#menu" data-i18n="nav_menu">Menu</a>
+      <a href="#cara-pesan" data-i18n="nav_how">Cara Pesan</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="id" class="on">ID</button><button data-lang="en">EN</button>
+      </div>
+      <a class="btn btn-wa wa-link" href="#" target="_blank" rel="noopener"><svg class="wa-ico"><use href="#wa"/></svg><span data-i18n="cta_short">Pesan</span></a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top" style="padding:0">
+  <img class="poster" src="assets/hero-poster.jpg" alt="">
+  <video autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg"><source src="assets/hero.mp4" type="video/mp4"></video>
+  <div class="wrap">
+    <span class="badge"><span class="dot"></span><span data-i18n="badge">PO minggu ini dibuka · tutup Jumat</span></span>
+    <h1 data-i18n-html="hero_h1">Sate rumahan, <em>siap</em> disajikan di rumahmu.</h1>
+    <p class="lead" data-i18n="hero_lead">Sate taichan, sate lilit, sei, dan katsu buatan rumah, dibumbui dengan sepenuh hati, dikemas vacuum-sealed, lalu diantar ke pintumu setiap hari Minggu.</p>
+    <div class="hero-cta">
+      <a class="btn btn-wa wa-link" href="#" target="_blank" rel="noopener"><svg class="wa-ico"><use href="#wa"/></svg><span data-i18n="cta_main">Pesan via WhatsApp</span></a>
+      <a class="btn btn-ghost" href="#menu" data-i18n="cta_menu">Lihat Menu →</a>
+    </div>
+    <div class="hero-meta">
+      <div><b>4</b><span data-i18n="meta1">Menu andalan</span></div>
+      <div><b data-i18n="meta2b">Jumat</b><span data-i18n="meta2">PO ditutup</span></div>
+      <div><b data-i18n="meta3b">Minggu</b><span data-i18n="meta3">Hari pengiriman</span></div>
+      <div><b>Jabodetabek</b><span data-i18n="meta4">Area kirim</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track" id="mq"></div></div>
+
+<section class="story" id="cerita">
+  <div class="wrap">
+    <div class="story-visual reveal">
+      <img class="main" src="assets/taichan.jpg" alt="Sate taichan Namu dalam kemasan vacuum">
+      <img class="float" src="assets/katsu.jpg" alt="Katsu Namu matang">
+      <div class="stamp"><b>Est.</b>Nov 2026</div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="story_eyebrow">Cerita kami</span>
+      <h2 data-i18n-html="story_h2">Setiap pesanan, kami sambut seperti <em>tamu</em>.</h2>
+      <div class="word"><span class="big">ber<span>tamu</span> → Namu</span><small data-i18n="word_small">menyambut tamu dengan hangat</small></div>
+      <p data-i18n="story_p1">Nama Namu diambil dari kata "bertamu". Buat kami, menjamu tamu artinya menyajikan yang terbaik: makanan yang dimasak dengan teliti, bumbu yang tidak setengah-setengah, dan rasa yang bikin orang ingin datang lagi.</p>
+      <p data-i18n="story_p2">Namu lahir pada November 2026 dengan satu misi sederhana: membawa kehangatan dapur rumahan ke meja makanmu. Lewat sistem pre-order, setiap batch disiapkan sesuai pesanan lalu dikemas vacuum-sealed supaya rasanya tetap terjaga sampai tiba di rumahmu.</p>
+      <div class="chef">
+        <div class="ico">👨‍🍳</div>
+        <div><b data-i18n="chef_t">Di balik dapur Namu</b><span data-i18n="chef_p">Chef kami telah teruji lewat pengalaman sebagai asisten Bu Fransisca di acara masak legendaris Indonesia. Pengalaman itulah yang kami bawa ke setiap tusuk sate Namu.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="eyebrow" data-i18n="menu_eyebrow">Menu</span><h2 data-i18n-html="menu_h2">Empat andalan <em>dari dapur Namu</em></h2></div>
+      <p data-i18n="menu_p">Semua menu dikemas vacuum-sealed dan siap kamu masak atau panaskan di rumah. Harga & isi paket bisa ditanyakan langsung lewat WhatsApp.</p>
+    </div>
+    <div class="menu-grid">
+      <article class="card reveal"><div class="card-img"><img src="assets/taichan.jpg" alt="Sate Taichan" loading="lazy"><span class="tag" data-i18n="tag_best">Andalan</span></div>
+        <div class="card-body"><h3>Sate Taichan</h3><p data-i18n="d_taichan">Sate putih ala Jakarta yang gurih dan segar, paling nikmat dicocol sambal pedas dan perasan jeruk nipis.</p>
+        <div class="price"><span data-i18n="price">Harga via WA</span><a href="#" class="wa-item" data-item="Sate Taichan" target="_blank" rel="noopener" data-i18n="ask">Tanya →</a></div></div></article>
+      <article class="card reveal"><div class="card-img"><img src="assets/lilit.jpg" alt="Sate Lilit" loading="lazy"><span class="tag" data-i18n="tag_bali">Khas Bali</span></div>
+        <div class="card-body"><h3>Sate Lilit</h3><p data-i18n="d_lilit">Daging cincang berbumbu rempah khas Bali, dililitkan di tusuk lebar lalu dibakar hingga harum.</p>
+        <div class="price"><span data-i18n="price">Harga via WA</span><a href="#" class="wa-item" data-item="Sate Lilit" target="_blank" rel="noopener" data-i18n="ask">Tanya →</a></div></div></article>
+      <article class="card reveal"><div class="card-img"><img src="assets/sei.jpg" alt="Sei" loading="lazy"><span class="tag" data-i18n="tag_smoke">Smoky</span></div>
+        <div class="card-body"><h3>Sei</h3><p data-i18n="d_sei">Terinspirasi daging asap khas NTT, dengan rasa smoky yang dalam dan aroma yang menggugah selera.</p>
+        <div class="price"><span data-i18n="price">Harga via WA</span><a href="#" class="wa-item" data-item="Sei" target="_blank" rel="noopener" data-i18n="ask">Tanya →</a></div></div></article>
+      <article class="card reveal"><div class="card-img"><img src="assets/katsu.jpg" alt="Katsu" loading="lazy"><span class="tag" data-i18n="tag_crispy">Crispy</span></div>
+        <div class="card-body"><h3>Katsu</h3><p data-i18n="d_katsu">Dibalut panko yang renyah keemasan. Tinggal goreng atau panggang, cocok untuk lauk keluarga maupun bekal.</p>
+        <div class="price"><span data-i18n="price">Harga via WA</span><a href="#" class="wa-item" data-item="Katsu" target="_blank" rel="noopener" data-i18n="ask">Tanya →</a></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow" data-i18n="why_eyebrow">Kenapa Namu</span><h2 data-i18n-html="why_h2">Rasa rumahan, <em>tanpa repot</em></h2></div>
+    <div class="why-grid">
+      <div class="why reveal"><div class="n">🍢</div><h3 data-i18n="w1t">Dibuat sesuai pesanan</h3><p data-i18n="w1p">Sistem PO membuat setiap batch disiapkan untuk pesanan minggu itu, bukan stok yang menumpuk.</p></div>
+      <div class="why reveal"><div class="n">🧊</div><h3 data-i18n="w2t">Vacuum-sealed</h3><p data-i18n="w2p">Kemasan kedap udara menjaga bumbu meresap dan rasa tetap terjaga hingga tiba di rumahmu.</p></div>
+      <div class="why reveal"><div class="n">🔥</div><h3 data-i18n="w3t">Praktis di rumah</h3><p data-i18n="w3p">Simpan di freezer, lalu masak kapan pun kamu mau. Cocok untuk makan keluarga, arisan, atau stok mingguan.</p></div>
+      <div class="why reveal"><div class="n">🎁</div><h3 data-i18n="w4t">Siap jadi hantaran</h3><p data-i18n="w4p">Dikemas rapi dalam tas cantik, jadi pas juga untuk dibawa bertamu atau dijadikan hadiah.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="cara-pesan">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow" style="color:#ffc79c" data-i18n="how_eyebrow">Cara pesan</span><h2 data-i18n-html="how_h2">Pesan hari ini, <em>nikmati hari Minggu</em></h2><p data-i18n="how_p">Sistem pre-order mingguan: sederhana, rapi, dan selalu segar.</p></div>
+    <div class="steps">
+      <div class="step reveal"><h3 data-i18n="s1t">Pilih menu</h3><p data-i18n="s1p">Taichan, lilit, sei, katsu, atau campur semuanya.</p></div>
+      <div class="step reveal"><h3 data-i18n="s2t">Chat WA (Ester)</h3><p data-i18n="s2p">Kirim pesananmu, cek harga, ongkir & minimal order di +62 851-8306-8096.</p></div>
+      <div class="step reveal"><h3 data-i18n="s3t">Konfirmasi sebelum Jumat</h3><p data-i18n="s3p">PO ditutup setiap hari Jumat. Pesanan setelahnya masuk batch minggu berikutnya.</p></div>
+      <div class="step reveal"><h3 data-i18n="s4t">Diantar hari Minggu</h3><p data-i18n="s4p">Pesanan dikirim vacuum-sealed ke alamatmu di area Jabodetabek.</p></div>
+    </div>
+    <div class="schedule reveal"><span class="pill" data-i18n="pill1">🗓️ PO tutup: Jumat</span><span class="pill alt" data-i18n="pill2">🚚 Kirim: Minggu</span><span class="pill" data-i18n="pill3">📍 Jabodetabek</span></div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="wrap">
+    <div class="center reveal"><span class="eyebrow" data-i18n="gal_eyebrow">Dari dapur kami</span><h2 data-i18n-html="gal_h2">Dikemas rapi, <em>sampai dengan aman</em></h2></div>
+    <div class="gallery-grid">
+      <figure class="reveal"><img src="assets/packs.jpg" alt="Paket sate Namu" loading="lazy"><figcaption data-i18n="cap1">Satu paket, banyak pilihan</figcaption></figure>
+      <figure class="reveal"><img src="assets/lilit.jpg" alt="Sate lilit" loading="lazy"><figcaption>Sate Lilit</figcaption></figure>
+      <figure class="reveal"><img src="assets/bag.jpg" alt="Tas hantaran Namu" loading="lazy"><figcaption data-i18n="cap3">Siap jadi hantaran</figcaption></figure>
+      <figure class="reveal"><img src="assets/lineup.jpg" alt="Lineup menu Namu" loading="lazy" style="object-position:50% 40%"><figcaption data-i18n="cap4">Vacuum-sealed per menu</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow">FAQ</span><h2 data-i18n-html="faq_h2">Ada <em>pertanyaan?</em></h2><p class="sub" data-i18n="faq_sub">Belum ketemu jawabannya? Langsung chat Ester di WhatsApp, kami bantu dengan senang hati.</p></div>
+    <div class="reveal">
+      <details open><summary data-i18n="q1">Kapan PO ditutup dan kapan pesanan dikirim?</summary><p data-i18n="a1">PO ditutup setiap hari Jumat dan pesanan dikirim pada hari Minggu di minggu yang sama.</p></details>
+      <details><summary data-i18n="q2">Pengiriman ke mana saja?</summary><p data-i18n="a2">Saat ini kami melayani area Jabodetabek (Jakarta, Bogor, Depok, Tangerang, Bekasi).</p></details>
+      <details><summary data-i18n="q3">Berapa harga, ongkir, dan minimal order?</summary><p data-i18n="a3">Harga, ongkir, kurir, dan minimal order bisa ditanyakan langsung ke Ester di WhatsApp +62 851-8306-8096.</p></details>
+      <details><summary data-i18n="q4">Bagaimana cara menyimpannya?</summary><p data-i18n="a4">Simpan kemasan vacuum di freezer setibanya di rumah. Untuk tips memasak dan penyajian, tanyakan saja ke Ester.</p></details>
+      <details><summary data-i18n="q5">Bisa pesan untuk acara atau hantaran?</summary><p data-i18n="a5">Bisa. Ceritakan kebutuhanmu lewat WhatsApp, nanti kami bantu atur paketnya.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap reveal">
+    <img class="logo" src="assets/logo.png" alt="Namu Sate House">
+    <h2 data-i18n-html="cta_h2">Jadilah <em>tamu</em> pertama kami minggu ini.</h2>
+    <p data-i18n="cta_p">Slot PO terbatas setiap minggu. Amankan pesananmu sebelum hari Jumat.</p>
+    <a class="btn btn-wa wa-link" href="#" target="_blank" rel="noopener"><svg class="wa-ico"><use href="#wa"/></svg><span data-i18n="cta_main">Pesan via WhatsApp</span></a>
+    <div class="contact">WhatsApp: +62 851-8306-8096 (Ester)</div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Namu Sate House</span><span data-i18n="foot">Sate rumahan · PO mingguan · Jabodetabek</span></div></footer>
+
+<a class="fab wa-link" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg style="color:#fff"><use href="#wa"/></svg></a>
+
+<script>
+const WA="6285183068096";
+const T={
+ id:{nav_story:"Cerita",nav_menu:"Menu",nav_how:"Cara Pesan",cta_short:"Pesan",badge:"PO minggu ini dibuka · tutup Jumat",
+  hero_h1:"Sate rumahan, <em>siap</em> disajikan di rumahmu.",
+  hero_lead:"Sate taichan, sate lilit, sei, dan katsu buatan rumah, dibumbui dengan sepenuh hati, dikemas vacuum-sealed, lalu diantar ke pintumu setiap hari Minggu.",
+  cta_main:"Pesan via WhatsApp",cta_menu:"Lihat Menu →",meta1:"Menu andalan",meta2b:"Jumat",meta2:"PO ditutup",meta3b:"Minggu",meta3:"Hari pengiriman",meta4:"Area kirim",
+  mq:["Sate Taichan","Sate Lilit","Sei","Katsu","Vacuum-Sealed","PO Mingguan","Kirim Jabodetabek"],
+  story_eyebrow:"Cerita kami",story_h2:"Setiap pesanan, kami sambut seperti <em>tamu</em>.",word_small:"menyambut tamu dengan hangat",
+  story_p1:"Nama Namu diambil dari kata \"bertamu\". Buat kami, menjamu tamu artinya menyajikan yang terbaik: makanan yang dimasak dengan teliti, bumbu yang tidak setengah-setengah, dan rasa yang bikin orang ingin datang lagi.",
+  story_p2:"Namu lahir pada November 2026 dengan satu misi sederhana: membawa kehangatan dapur rumahan ke meja makanmu. Lewat sistem pre-order, setiap batch disiapkan sesuai pesanan lalu dikemas vacuum-sealed supaya rasanya tetap terjaga sampai tiba di rumahmu.",
+  chef_t:"Di balik dapur Namu",chef_p:"Chef kami telah teruji lewat pengalaman sebagai asisten Bu Fransisca di acara masak legendaris Indonesia. Pengalaman itulah yang kami bawa ke setiap tusuk sate Namu.",
+  menu_eyebrow:"Menu",menu_h2:"Empat andalan <em>dari dapur Namu</em>",menu_p:"Semua menu dikemas vacuum-sealed dan siap kamu masak atau panaskan di rumah. Harga & isi paket bisa ditanyakan langsung lewat WhatsApp.",
+  tag_best:"Andalan",tag_bali:"Khas Bali",tag_smoke:"Smoky",tag_crispy:"Crispy",price:"Harga via WA",ask:"Tanya →",
+  d_taichan:"Sate putih ala Jakarta yang gurih dan segar, paling nikmat dicocol sambal pedas dan perasan jeruk nipis.",
+  d_lilit:"Daging cincang berbumbu rempah khas Bali, dililitkan di tusuk lebar lalu dibakar hingga harum.",
+  d_sei:"Terinspirasi daging asap khas NTT, dengan rasa smoky yang dalam dan aroma yang menggugah selera.",
+  d_katsu:"Dibalut panko yang renyah keemasan. Tinggal goreng atau panggang, cocok untuk lauk keluarga maupun bekal.",
+  why_eyebrow:"Kenapa Namu",why_h2:"Rasa rumahan, <em>tanpa repot</em>",
+  w1t:"Dibuat sesuai pesanan",w1p:"Sistem PO membuat setiap batch disiapkan untuk pesanan minggu itu, bukan stok yang menumpuk.",
+  w2t:"Vacuum-sealed",w2p:"Kemasan kedap udara menjaga bumbu meresap dan rasa tetap terjaga hingga tiba di rumahmu.",
+  w3t:"Praktis di rumah",w3p:"Simpan di freezer, lalu masak kapan pun kamu mau. Cocok untuk makan keluarga, arisan, atau stok mingguan.",
+  w4t:"Siap jadi hantaran",w4p:"Dikemas rapi dalam tas cantik, jadi pas juga untuk dibawa bertamu atau dijadikan hadiah.",
+  how_eyebrow:"Cara pesan",how_h2:"Pesan hari ini, <em>nikmati hari Minggu</em>",how_p:"Sistem pre-order mingguan: sederhana, rapi, dan selalu segar.",
+  s1t:"Pilih menu",s1p:"Taichan, lilit, sei, katsu, atau campur semuanya.",s2t:"Chat WA (Ester)",s2p:"Kirim pesananmu, cek harga, ongkir & minimal order di +62 851-8306-8096.",
+  s3t:"Konfirmasi sebelum Jumat",s3p:"PO ditutup setiap hari Jumat. Pesanan setelahnya masuk batch minggu berikutnya.",s4t:"Diantar hari Minggu",s4p:"Pesanan dikirim vacuum-sealed ke alamatmu di area Jabodetabek.",
+  pill1:"🗓️ PO tutup: Jumat",pill2:"🚚 Kirim: Minggu",pill3:"📍 Jabodetabek",
+  gal_eyebrow:"Dari dapur kami",gal_h2:"Dikemas rapi, <em>sampai dengan aman</em>",cap1:"Satu paket, banyak pilihan",cap3:"Siap jadi hantaran",cap4:"Vacuum-sealed per menu",
+  faq_h2:"Ada <em>pertanyaan?</em>",faq_sub:"Belum ketemu jawabannya? Langsung chat Ester di WhatsApp, kami bantu dengan senang hati.",
+  q1:"Kapan PO ditutup dan kapan pesanan dikirim?",a1:"PO ditutup setiap hari Jumat dan pesanan dikirim pada hari Minggu di minggu yang sama.",
+  q2:"Pengiriman ke mana saja?",a2:"Saat ini kami melayani area Jabodetabek (Jakarta, Bogor, Depok, Tangerang, Bekasi).",
+  q3:"Berapa harga, ongkir, dan minimal order?",a3:"Harga, ongkir, kurir, dan minimal order bisa ditanyakan langsung ke Ester di WhatsApp +62 851-8306-8096.",
+  q4:"Bagaimana cara menyimpannya?",a4:"Simpan kemasan vacuum di freezer setibanya di rumah. Untuk tips memasak dan penyajian, tanyakan saja ke Ester.",
+  q5:"Bisa pesan untuk acara atau hantaran?",a5:"Bisa. Ceritakan kebutuhanmu lewat WhatsApp, nanti kami bantu atur paketnya.",
+  cta_h2:"Jadilah <em>tamu</em> pertama kami minggu ini.",cta_p:"Slot PO terbatas setiap minggu. Amankan pesananmu sebelum hari Jumat.",foot:"Sate rumahan · PO mingguan · Jabodetabek",
+  wa_msg:"Halo Kak Ester, saya mau pesan Namu Sate House untuk PO minggu ini 🙏",wa_item:"Halo Kak Ester, saya mau tanya harga & paket {item} dari Namu Sate House 🙏",
+  title:"Namu Sate House — Sate Rumahan, Siap Disajikan"},
+ en:{nav_story:"Our Story",nav_menu:"Menu",nav_how:"How to Order",cta_short:"Order",badge:"This week's PO is open · closes Friday",
+  hero_h1:"Homemade satay, <em>ready</em> for your table.",
+  hero_lead:"Sate taichan, sate lilit, sei, and katsu, made at home and seasoned with heart, vacuum-sealed and delivered to your door every Sunday.",
+  cta_main:"Order on WhatsApp",cta_menu:"See the Menu →",meta1:"Signature dishes",meta2b:"Friday",meta2:"Pre-order closes",meta3b:"Sunday",meta3:"Delivery day",meta4:"Delivery area",
+  mq:["Sate Taichan","Sate Lilit","Sei","Katsu","Vacuum-Sealed","Weekly Pre-Order","Greater Jakarta Delivery"],
+  story_eyebrow:"Our story",story_h2:"We welcome every order like a <em>guest</em>.",word_small:"to welcome guests warmly",
+  story_p1:"Namu comes from the Indonesian word \"bertamu\", visiting as a guest. To us, hosting means serving our very best: food cooked with care, seasoning that never cuts corners, and flavour that brings people back.",
+  story_p2:"Namu was born in November 2026 with a simple mission: to bring the warmth of a home kitchen to your table. Through weekly pre-orders, every batch is prepared to order and vacuum-sealed so the flavour stays intact all the way to your home.",
+  chef_t:"Behind the Namu kitchen",chef_p:"Our chef earned their skills as an assistant to Bu Fransisca on one of Indonesia's legendary cooking shows, and brings that experience to every skewer.",
+  menu_eyebrow:"Menu",menu_h2:"Four favourites <em>from the Namu kitchen</em>",menu_p:"Every item comes vacuum-sealed, ready to cook or reheat at home. Ask us on WhatsApp for prices and pack sizes.",
+  tag_best:"Signature",tag_bali:"Balinese",tag_smoke:"Smoky",tag_crispy:"Crispy",price:"Price on WhatsApp",ask:"Ask →",
+  d_taichan:"Jakarta's iconic white satay: savoury and fresh, best dipped in fiery sambal with a squeeze of lime.",
+  d_lilit:"Minced meat blended with Balinese spices, wrapped around wide skewers and grilled until fragrant.",
+  d_sei:"Inspired by the smoked meat of East Nusa Tenggara, with deep smoky flavour and an irresistible aroma.",
+  d_katsu:"Coated in golden, crunchy panko. Just fry or bake, perfect for family meals or lunch boxes.",
+  why_eyebrow:"Why Namu",why_h2:"Home-cooked flavour, <em>zero hassle</em>",
+  w1t:"Made to order",w1p:"Our pre-order system means each batch is prepared for that week's orders, not left sitting as stock.",
+  w2t:"Vacuum-sealed",w2p:"Airtight packaging locks in the seasoning and keeps the flavour intact until it reaches you.",
+  w3t:"Easy at home",w3p:"Keep it in the freezer and cook whenever you like. Great for family dinners, gatherings, or weekly stock.",
+  w4t:"Gift-ready",w4p:"Neatly packed in a pretty bag, perfect to bring when visiting or to give as a gift.",
+  how_eyebrow:"How to order",how_h2:"Order today, <em>enjoy on Sunday</em>",how_p:"A weekly pre-order system that is simple, tidy, and always fresh.",
+  s1t:"Pick your menu",s1p:"Taichan, lilit, sei, katsu, or mix them all.",s2t:"Chat WA (Ester)",s2p:"Send your order and ask about prices, delivery fee & minimum order at +62 851-8306-8096.",
+  s3t:"Confirm before Friday",s3p:"Pre-orders close every Friday. Later orders join the following week's batch.",s4t:"Delivered on Sunday",s4p:"Your order arrives vacuum-sealed anywhere in Greater Jakarta.",
+  pill1:"🗓️ PO closes: Friday",pill2:"🚚 Delivery: Sunday",pill3:"📍 Greater Jakarta",
+  gal_eyebrow:"From our kitchen",gal_h2:"Packed with care, <em>delivered safely</em>",cap1:"One bundle, plenty of choice",cap3:"Gift-ready",cap4:"Vacuum-sealed per item",
+  faq_h2:"Got <em>questions?</em>",faq_sub:"Can't find your answer? Chat with Ester on WhatsApp. We're happy to help.",
+  q1:"When does the pre-order close and when is delivery?",a1:"Pre-orders close every Friday and are delivered on Sunday of the same week.",
+  q2:"Where do you deliver?",a2:"We currently deliver across Greater Jakarta (Jakarta, Bogor, Depok, Tangerang, Bekasi).",
+  q3:"What about prices, delivery fees and minimum order?",a3:"Ask Ester on WhatsApp at +62 851-8306-8096 for prices, delivery fees, courier and minimum order.",
+  q4:"How should I store it?",a4:"Put the vacuum packs in the freezer as soon as they arrive. Ask Ester for cooking and serving tips.",
+  q5:"Can I order for events or gifts?",a5:"Absolutely. Tell us what you need on WhatsApp and we'll help put a package together.",
+  cta_h2:"Be our <em>guest</em> this week.",cta_p:"Pre-order slots are limited each week. Secure yours before Friday.",foot:"Homemade satay · Weekly pre-order · Greater Jakarta",
+  wa_msg:"Hi Ester, I'd like to order from Namu Sate House for this week's pre-order 🙏",wa_item:"Hi Ester, I'd like to ask about the price & packs for {item} from Namu Sate House 🙏",
+  title:"Namu Sate House — Homemade Satay, Ready to Serve"}
+};
+const waURL=t=>"https://wa.me/"+WA+"?text="+encodeURIComponent(t);
+function setLang(l){
+  const d=T[l];document.documentElement.lang=l;document.title=d.title;
+  document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.dataset.i18n;if(d[k]!=null)e.textContent=d[k]});
+  document.querySelectorAll("[data-i18n-html]").forEach(e=>{const k=e.dataset.i18nHtml;if(d[k]!=null)e.innerHTML=d[k]});
+  document.querySelectorAll(".wa-link").forEach(a=>a.href=waURL(d.wa_msg));
+  document.querySelectorAll(".wa-item").forEach(a=>a.href=waURL(d.wa_item.replace("{item}",a.dataset.item)));
+  const items=d.mq.map(x=>"<span>"+x+"</span>").join("");document.getElementById("mq").innerHTML=items+items;
+  document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));
+  try{localStorage.setItem("namu-lang",l)}catch(e){}
+}
+document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+let start="id";try{start=localStorage.getItem("namu-lang")||"id"}catch(e){}
+if(location.hash==="#en")start="en";
+setLang(start);
+const nav=document.getElementById("nav");
+addEventListener("scroll",()=>nav.classList.toggle("scrolled",scrollY>40),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
