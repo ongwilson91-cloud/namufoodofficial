@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Namu Sate House — Sate Rumahan, Siap Disajikan</title>
-<meta name="description" content="Namu Sate House: sate taichan, sate lilit, sei & katsu rumahan. Sistem PO mingguan, vacuum-sealed, kirim ke Jabodetabek.">
+<title>Namufood — Spesialis Sate Taichan Gendut | Namu Sate House</title>
+<meta name="description" content="Namufood (Namu Sate House): spesialis Sate Taichan Gendut. Juga ada Sate Bawah Pohon, Sate Lilit dan Katsu, dikemas vacuum-sealed. Sei segera hadir.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -92,7 +92,9 @@ section{padding:80px 0}
 .menu::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 0%,rgba(232,116,44,.14),transparent 45%);pointer-events:none}
 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:3rem;flex-wrap:wrap;position:relative}
 .sec-head p{max-width:44ch;color:var(--muted)}
-.menu-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative}
+.card.feature{grid-column:span 2}
+.card.feature .card-img{aspect-ratio:16/10}
 .card{background:var(--char);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
 .card:hover{transform:translateY(-6px);border-color:rgba(232,116,44,.5)}
 .card-img{aspect-ratio:1/1;overflow:hidden;position:relative}
@@ -157,6 +159,25 @@ details p{margin-top:.8rem;color:#5d4b37;font-size:.96rem}
 .cta p{color:#cbbba3;margin:1.2rem auto 2rem;max-width:50ch}
 .cta .contact{margin-top:1.4rem;font-size:.9rem;color:var(--muted)}
 
+/* COMING SOON CARD */
+.card.soon .card-img{background:radial-gradient(circle at 50% 40%,#3a2816,#1a120b);display:grid;place-items:center}
+.card.soon .card-img .soon-inner{text-align:center;color:#ffd2b0}
+.card.soon .card-img .soon-inner b{display:block;font-family:var(--display);font-size:1.7rem;color:var(--cream)}
+.card.soon .card-img .soon-inner span{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;opacity:.8}
+.card.soon{opacity:.92}
+.card.feature{border-color:rgba(232,116,44,.55);box-shadow:0 20px 50px -25px rgba(232,116,44,.6)}
+/* STORY VIDEO */
+.vid{background:var(--espresso);color:var(--cream)}
+.vid .wrap{display:grid;grid-template-columns:1fr 340px;gap:64px;align-items:center}
+.vid p{color:#e3d2b1;margin-top:1rem;max-width:48ch}
+.vid video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:var(--radius);background:#000;box-shadow:0 30px 60px -25px rgba(0,0,0,.7)}
+.vid .btn{margin-top:1.8rem}
+.btn-ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;box-shadow:0 10px 30px -12px rgba(220,39,67,.7)}
+.ig-ico{width:20px;height:20px;flex:none}
+.cta .actions{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+footer a:hover{color:var(--ember-2)}
+@media (max-width:980px){.vid .wrap{grid-template-columns:1fr;gap:40px}.vid video{max-width:340px;margin-inline:auto}}
+
 footer{background:#0f0b07;color:var(--muted);padding:34px 0;font-size:.86rem}
 footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
@@ -177,6 +198,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 }
 @media (max-width:560px){
   section{padding:80px 0}
+  .card.feature{grid-column:span 1}
+  .card.feature .card-img{aspect-ratio:1/1}
   .nav .btn span{display:none}
   .nav-logo img{height:38px}
   .menu-grid,.why-grid,.steps{grid-template-columns:1fr}
@@ -190,16 +213,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute"><symbol id="wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.1c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.2 1.3-4-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.4 9.8 10.2 5.1 16 5.1s10.6 4.7 10.6 10.5S21.8 26.2 16 26.2zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.9-1.7-2.2-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.7 5.8 5.1 2.9 1.1 3.4.9 4.1.8.6-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1 0-.3-.1-.6-.3z"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute"><symbol id="wa" viewBox="0 0 32 32"><path fill="currentColor" d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.1c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.2 1.3-4-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.4 9.8 10.2 5.1 16 5.1s10.6 4.7 10.6 10.5S21.8 26.2 16 26.2zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.9-1.7-2.2-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.7 5.8 5.1 2.9 1.1 3.4.9 4.1.8.6-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1 0-.3-.1-.6-.3z"/></symbol><symbol id="ig" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 4.6a5.2 5.2 0 1 0 0 10.4 5.2 5.2 0 0 0 0-10.4zm0 8.6a3.4 3.4 0 1 1 0-6.8 3.4 3.4 0 0 1 0 6.8zm5.4-9.9a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></symbol></svg>
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a href="#top" class="nav-logo"><img src="assets/logo.png" alt="Namu Sate House"></a>
+    <a href="#top" class="nav-logo"><img src="assets/logo.png" alt="Namufood · Namu Sate House"></a>
     <nav class="nav-links">
       <a href="#cerita" data-i18n="nav_story">Cerita</a>
       <a href="#menu" data-i18n="nav_menu">Menu</a>
+      <a href="#kisah" data-i18n="nav_vid">Kisah Taichan</a>
       <a href="#cara-pesan" data-i18n="nav_how">Cara Pesan</a>
       <a href="#faq">FAQ</a>
+      <a href="https://www.instagram.com/namufoodofficial/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ig-ico"><use href="#ig"/></svg></a>
     </nav>
     <div class="nav-right">
       <div class="lang" role="group" aria-label="Language">
@@ -211,21 +236,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 </header>
 
 <section class="hero" id="top" style="padding:0">
-  <img class="poster" src="assets/hero-poster.jpg" alt="">
-  <video autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg"><source src="assets/hero.mp4" type="video/mp4"></video>
+  <img class="poster" src="assets/taichan-gendut.jpg" alt="Sate Taichan Gendut Namu dengan sambal dan jeruk nipis" style="object-position:50% 60%">
   <div class="wrap">
-    <span class="badge"><span class="dot"></span><span data-i18n="badge">PO minggu ini dibuka · tutup Jumat</span></span>
-    <h1 data-i18n-html="hero_h1">Sate rumahan, <em>siap</em> disajikan di rumahmu.</h1>
-    <p class="lead" data-i18n="hero_lead">Sate taichan, sate lilit, sei, dan katsu buatan rumah, dibumbui dengan sepenuh hati, dikemas vacuum-sealed, lalu diantar ke pintumu setiap hari Minggu.</p>
+    <span class="badge"><span class="dot"></span><span data-i18n="badge">Namu Sate House · Spesialis Sate Taichan</span></span>
+    <h1 data-i18n-html="hero_h1">Sate Taichan <em>Gendut</em>, andalan Namufood.</h1>
+    <p class="lead" data-i18n="hero_lead">Potongan ayam gendut dan juicy dengan racikan khusus chef kami, gurih tanpa bumbu kacang, paling nikmat dicocol sambal pedas dan perasan jeruk nipis. Dibuat rumahan dan dikemas vacuum-sealed.</p>
     <div class="hero-cta">
       <a class="btn btn-wa wa-link" href="#" target="_blank" rel="noopener"><svg class="wa-ico"><use href="#wa"/></svg><span data-i18n="cta_main">Pesan via WhatsApp</span></a>
       <a class="btn btn-ghost" href="#menu" data-i18n="cta_menu">Lihat Menu →</a>
     </div>
     <div class="hero-meta">
-      <div><b>4</b><span data-i18n="meta1">Menu andalan</span></div>
-      <div><b data-i18n="meta2b">Jumat</b><span data-i18n="meta2">PO ditutup</span></div>
-      <div><b data-i18n="meta3b">Minggu</b><span data-i18n="meta3">Hari pengiriman</span></div>
-      <div><b>Jabodetabek</b><span data-i18n="meta4">Area kirim</span></div>
+      <div><b data-i18n="meta1b">Taichan Gendut</b><span data-i18n="meta1">Menu spesialis</span></div>
+      <div><b>Vacuum-sealed</b><span data-i18n="meta2">Rasa tetap terjaga</span></div>
+      <div><b data-i18n="meta3b">Segera hadir</b><span data-i18n="meta3">Info harga &amp; pengiriman</span></div>
+      <div><b><a href="https://www.instagram.com/namufoodofficial/" target="_blank" rel="noopener">@namufoodofficial</a></b><span>Instagram</span></div>
     </div>
   </div>
 </section>
@@ -235,7 +259,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="story" id="cerita">
   <div class="wrap">
     <div class="story-visual reveal">
-      <img class="main" src="assets/taichan.jpg" alt="Sate taichan Namu dalam kemasan vacuum">
+      <img class="main" src="assets/taichan-gendut-2.jpg" alt="Sate Taichan Gendut Namu" style="object-position:50% 55%">
       <img class="float" src="assets/katsu.jpg" alt="Katsu Namu matang">
       <div class="stamp"><b>Est.</b>Nov 2026</div>
     </div>
@@ -244,7 +268,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <h2 data-i18n-html="story_h2">Setiap pesanan, kami sambut seperti <em>tamu</em>.</h2>
       <div class="word"><span class="big">ber<span>tamu</span> → Namu</span><small data-i18n="word_small">menyambut tamu dengan hangat</small></div>
       <p data-i18n="story_p1">Nama Namu diambil dari kata "bertamu". Buat kami, menjamu tamu artinya menyajikan yang terbaik: makanan yang dimasak dengan teliti, bumbu yang tidak setengah-setengah, dan rasa yang bikin orang ingin datang lagi.</p>
-      <p data-i18n="story_p2">Namu lahir pada November 2026 dengan satu misi sederhana: membawa kehangatan dapur rumahan ke meja makanmu. Lewat sistem pre-order, setiap batch disiapkan sesuai pesanan lalu dikemas vacuum-sealed supaya rasanya tetap terjaga sampai tiba di rumahmu.</p>
+      <p data-i18n="story_p2">Namufood lahir pada November 2026 dengan satu misi sederhana: membawa kehangatan dapur rumahan ke meja makanmu. Di bawah Namufood ada Namu Sate House, lini sate kami. Andalannya adalah Sate Taichan Gendut, disiapkan sesuai pesanan lalu dikemas vacuum-sealed supaya rasanya tetap terjaga sampai tiba di rumahmu.</p>
       <div class="chef">
         <div class="ico">👨‍🍳</div>
         <div><b data-i18n="chef_t">Di balik dapur Namu</b><span data-i18n="chef_p">Chef kami telah teruji lewat pengalaman sebagai asisten Bu Fransisca di acara masak legendaris Indonesia. Pengalaman itulah yang kami bawa ke setiap tusuk sate Namu.</span></div>
@@ -256,31 +280,46 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <section class="menu" id="menu">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div><span class="eyebrow" data-i18n="menu_eyebrow">Menu</span><h2 data-i18n-html="menu_h2">Empat andalan <em>dari dapur Namu</em></h2></div>
-      <p data-i18n="menu_p">Semua menu dikemas vacuum-sealed dan siap kamu masak atau panaskan di rumah. Harga & isi paket bisa ditanyakan langsung lewat WhatsApp.</p>
+      <div><span class="eyebrow" data-i18n="menu_eyebrow">Menu</span><h2 data-i18n-html="menu_h2">Menu <em>Namu Sate House</em></h2></div>
+      <p data-i18n="menu_p">Semua menu dikemas vacuum-sealed dan siap kamu masak atau panaskan di rumah. Detail harga dan pengiriman segera hadir, sementara itu silakan tanya lewat WhatsApp.</p>
     </div>
     <div class="menu-grid">
-      <article class="card reveal"><div class="card-img"><img src="assets/taichan.jpg" alt="Sate Taichan" loading="lazy"><span class="tag" data-i18n="tag_best">Andalan</span></div>
-        <div class="card-body"><h3>Sate Taichan</h3><p data-i18n="d_taichan">Sate putih ala Jakarta yang gurih dan segar, paling nikmat dicocol sambal pedas dan perasan jeruk nipis.</p>
-        <div class="price"><span data-i18n="price">Harga via WA</span><a href="#" class="wa-item" data-item="Sate Taichan" target="_blank" rel="noopener" data-i18n="ask">Tanya →</a></div></div></article>
-      <article class="card reveal"><div class="card-img"><img src="assets/lilit.jpg" alt="Sate Lilit" loading="lazy"><span class="tag" data-i18n="tag_bali">Khas Bali</span></div>
-        <div class="card-body"><h3>Sate Lilit</h3><p data-i18n="d_lilit">Daging cincang berbumbu rempah khas Bali, dililitkan di tusuk lebar lalu dibakar hingga harum.</p>
-        <div class="price"><span data-i18n="price">Harga via WA</span><a href="#" class="wa-item" data-item="Sate Lilit" target="_blank" rel="noopener" data-i18n="ask">Tanya →</a></div></div></article>
-      <article class="card reveal"><div class="card-img"><img src="assets/sei.jpg" alt="Sei" loading="lazy"><span class="tag" data-i18n="tag_smoke">Smoky</span></div>
-        <div class="card-body"><h3>Sei</h3><p data-i18n="d_sei">Terinspirasi daging asap khas NTT, dengan rasa smoky yang dalam dan aroma yang menggugah selera.</p>
-        <div class="price"><span data-i18n="price">Harga via WA</span><a href="#" class="wa-item" data-item="Sei" target="_blank" rel="noopener" data-i18n="ask">Tanya →</a></div></div></article>
+      <article class="card feature reveal"><div class="card-img"><img src="assets/taichan-gendut.jpg" alt="Sate Taichan Gendut" loading="lazy" style="object-position:50% 60%"><span class="tag" data-i18n="tag_best">Spesialis</span></div>
+        <div class="card-body"><h3>Sate Taichan Gendut</h3><p data-i18n="d_taichan">Menu spesialis Namu Sate House. Sate putih ala Jakarta dengan potongan ayam gendut dan juicy, dibumbui racikan khusus chef kami, paling nikmat dicocol sambal pedas dan perasan jeruk nipis.</p>
+        <div class="price"><span data-i18n="price">Harga segera hadir</span><a href="#" class="wa-item" data-item="Sate Taichan Gendut" target="_blank" rel="noopener" data-i18n="ask">Tanya →</a></div></div></article>
+      <article class="card reveal"><div class="card-img"><img src="assets/sei.jpg" alt="Sate Bawah Pohon" loading="lazy"><span class="tag" data-i18n="tag_bp">Bumbu Bali</span></div>
+        <div class="card-body"><h3>Sate Bawah Pohon</h3><p data-i18n="d_bp">Potongan ayam besar ala taichan, tapi dibumbui racikan khas Bali yang kuning dan harum. Buat kamu yang suka taichan dengan rasa rempah.</p>
+        <div class="price"><span data-i18n="price">Harga segera hadir</span><a href="#" class="wa-item" data-item="Sate Bawah Pohon" target="_blank" rel="noopener" data-i18n="ask">Tanya →</a></div></div></article>
+      <article class="card reveal"><div class="card-img"><img src="assets/lilit.jpg" alt="Sate Lilit" loading="lazy"><span class="tag" data-i18n="tag_lilit">Mini</span></div>
+        <div class="card-body"><h3>Sate Lilit</h3><p data-i18n="d_lilit">Sate lilit berbumbu kuning dengan ukuran kecil yang pas sekali gigit, dibakar hingga harum.</p>
+        <div class="price"><span data-i18n="price">Harga segera hadir</span><a href="#" class="wa-item" data-item="Sate Lilit" target="_blank" rel="noopener" data-i18n="ask">Tanya →</a></div></div></article>
       <article class="card reveal"><div class="card-img"><img src="assets/katsu.jpg" alt="Katsu" loading="lazy"><span class="tag" data-i18n="tag_crispy">Crispy</span></div>
         <div class="card-body"><h3>Katsu</h3><p data-i18n="d_katsu">Dibalut panko yang renyah keemasan. Tinggal goreng atau panggang, cocok untuk lauk keluarga maupun bekal.</p>
-        <div class="price"><span data-i18n="price">Harga via WA</span><a href="#" class="wa-item" data-item="Katsu" target="_blank" rel="noopener" data-i18n="ask">Tanya →</a></div></div></article>
+        <div class="price"><span data-i18n="price">Harga segera hadir</span><a href="#" class="wa-item" data-item="Katsu" target="_blank" rel="noopener" data-i18n="ask">Tanya →</a></div></div></article>
+      <article class="card soon reveal"><div class="card-img"><div class="soon-inner"><span data-i18n="soon">Coming soon</span><b>Sei</b></div><span class="tag" data-i18n="tag_smoke">Segera hadir</span></div>
+        <div class="card-body"><h3>Sei</h3><p data-i18n="d_sei">Menu baru yang sedang kami siapkan. Pantau Instagram kami untuk kabar peluncurannya.</p>
+        <div class="price"><span data-i18n="soon">Coming soon</span><a href="https://www.instagram.com/namufoodofficial/" target="_blank" rel="noopener" data-i18n="follow">Follow IG →</a></div></div></article>
     </div>
+  </div>
+</section>
+
+<section class="vid" id="kisah">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="vid_eyebrow">Kisah Sate Taichan</span>
+      <h2 data-i18n-html="vid_h2">Sate kok <em>pucat?</em> Justru itu rahasianya.</h2>
+      <p data-i18n="vid_p">Tonton cerita singkat asal-usul sate taichan, sate putih tanpa bumbu kacang yang lahir di Senayan, Jakarta. Versi Namu kami buat lebih gendut dan juicy.</p>
+      <a class="btn btn-wa wa-link" href="#" target="_blank" rel="noopener"><svg class="wa-ico"><use href="#wa"/></svg><span data-i18n="cta_main">Pesan via WhatsApp</span></a>
+    </div>
+    <div class="reveal"><video controls playsinline preload="metadata" poster="assets/taichan-story-poster.jpg"><source src="assets/taichan-story.mp4" type="video/mp4"></video></div>
   </div>
 </section>
 
 <section class="benefits">
   <div class="wrap">
-    <div class="center reveal"><span class="eyebrow" data-i18n="why_eyebrow">Kenapa Namu</span><h2 data-i18n-html="why_h2">Rasa rumahan, <em>tanpa repot</em></h2></div>
+    <div class="center reveal"><span class="eyebrow" data-i18n="why_eyebrow">Kenapa Namufood</span><h2 data-i18n-html="why_h2">Rasa rumahan, <em>tanpa repot</em></h2></div>
     <div class="why-grid">
-      <div class="why reveal"><div class="n">🍢</div><h3 data-i18n="w1t">Dibuat sesuai pesanan</h3><p data-i18n="w1p">Sistem PO membuat setiap batch disiapkan untuk pesanan minggu itu, bukan stok yang menumpuk.</p></div>
+      <div class="why reveal"><div class="n">🍢</div><h3 data-i18n="w1t">Dibuat sesuai pesanan</h3><p data-i18n="w1p">Setiap batch disiapkan untuk pesanan yang masuk, bukan stok yang menumpuk.</p></div>
       <div class="why reveal"><div class="n">🧊</div><h3 data-i18n="w2t">Vacuum-sealed</h3><p data-i18n="w2p">Kemasan kedap udara menjaga bumbu meresap dan rasa tetap terjaga hingga tiba di rumahmu.</p></div>
       <div class="why reveal"><div class="n">🔥</div><h3 data-i18n="w3t">Praktis di rumah</h3><p data-i18n="w3p">Simpan di freezer, lalu masak kapan pun kamu mau. Cocok untuk makan keluarga, arisan, atau stok mingguan.</p></div>
       <div class="why reveal"><div class="n">🎁</div><h3 data-i18n="w4t">Siap jadi hantaran</h3><p data-i18n="w4p">Dikemas rapi dalam tas cantik, jadi pas juga untuk dibawa bertamu atau dijadikan hadiah.</p></div>
@@ -290,14 +329,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
 <section class="how" id="cara-pesan">
   <div class="wrap">
-    <div class="center reveal"><span class="eyebrow" style="color:#ffc79c" data-i18n="how_eyebrow">Cara pesan</span><h2 data-i18n-html="how_h2">Pesan hari ini, <em>nikmati hari Minggu</em></h2><p data-i18n="how_p">Sistem pre-order mingguan: sederhana, rapi, dan selalu segar.</p></div>
+    <div class="center reveal"><span class="eyebrow" style="color:#ffc79c" data-i18n="how_eyebrow">Cara pesan</span><h2 data-i18n-html="how_h2">Pesan <em>semudah chat</em></h2><p data-i18n="how_p">Detail harga, jadwal, dan area pengiriman sedang kami finalkan dan segera hadir.</p></div>
     <div class="steps">
-      <div class="step reveal"><h3 data-i18n="s1t">Pilih menu</h3><p data-i18n="s1p">Taichan, lilit, sei, katsu, atau campur semuanya.</p></div>
-      <div class="step reveal"><h3 data-i18n="s2t">Chat WA (Ester)</h3><p data-i18n="s2p">Kirim pesananmu, cek harga, ongkir & minimal order di +62 851-8306-8096.</p></div>
-      <div class="step reveal"><h3 data-i18n="s3t">Konfirmasi sebelum Jumat</h3><p data-i18n="s3p">PO ditutup setiap hari Jumat. Pesanan setelahnya masuk batch minggu berikutnya.</p></div>
-      <div class="step reveal"><h3 data-i18n="s4t">Diantar hari Minggu</h3><p data-i18n="s4p">Pesanan dikirim vacuum-sealed ke alamatmu di area Jabodetabek.</p></div>
+      <div class="step reveal"><h3 data-i18n="s1t">Pilih menu</h3><p data-i18n="s1p">Sate Taichan Gendut, Sate Bawah Pohon, Sate Lilit, Katsu, atau campur semuanya.</p></div>
+      <div class="step reveal"><h3 data-i18n="s2t">Chat WA (Ester)</h3><p data-i18n="s2p">Kirim pesananmu ke +62 851-8306-8096. Ester akan bantu cek ketersediaan.</p></div>
+      <div class="step reveal"><h3 data-i18n="s3t">Konfirmasi pesanan</h3><p data-i18n="s3p">Ester akan mengonfirmasi detail pesanan, harga, dan jadwalnya.</p></div>
+      <div class="step reveal"><h3 data-i18n="s4t">Pesanan dikirim</h3><p data-i18n="s4p">Pesanan dikirim dalam kemasan vacuum-sealed. Info area dan jadwal kirim segera hadir.</p></div>
     </div>
-    <div class="schedule reveal"><span class="pill" data-i18n="pill1">🗓️ PO tutup: Jumat</span><span class="pill alt" data-i18n="pill2">🚚 Kirim: Minggu</span><span class="pill" data-i18n="pill3">📍 Jabodetabek</span></div>
+    <div class="schedule reveal"><span class="pill" data-i18n="pill1">💰 Harga: segera hadir</span><span class="pill alt" data-i18n="pill2">🚚 Jadwal &amp; area kirim: segera hadir</span></div>
   </div>
 </section>
 
@@ -306,7 +345,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
     <div class="center reveal"><span class="eyebrow" data-i18n="gal_eyebrow">Dari dapur kami</span><h2 data-i18n-html="gal_h2">Dikemas rapi, <em>sampai dengan aman</em></h2></div>
     <div class="gallery-grid">
       <figure class="reveal"><img src="assets/packs.jpg" alt="Paket sate Namu" loading="lazy"><figcaption data-i18n="cap1">Satu paket, banyak pilihan</figcaption></figure>
-      <figure class="reveal"><img src="assets/lilit.jpg" alt="Sate lilit" loading="lazy"><figcaption>Sate Lilit</figcaption></figure>
+      <figure class="reveal"><img src="assets/sei.jpg" alt="Sate Bawah Pohon" loading="lazy"><figcaption>Sate Bawah Pohon</figcaption></figure>
       <figure class="reveal"><img src="assets/bag.jpg" alt="Tas hantaran Namu" loading="lazy"><figcaption data-i18n="cap3">Siap jadi hantaran</figcaption></figure>
       <figure class="reveal"><img src="assets/lineup.jpg" alt="Lineup menu Namu" loading="lazy" style="object-position:50% 40%"><figcaption data-i18n="cap4">Vacuum-sealed per menu</figcaption></figure>
     </div>
@@ -315,11 +354,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
 <section class="faq" id="faq">
   <div class="wrap">
-    <div class="reveal"><span class="eyebrow">FAQ</span><h2 data-i18n-html="faq_h2">Ada <em>pertanyaan?</em></h2><p class="sub" data-i18n="faq_sub">Belum ketemu jawabannya? Langsung chat Ester di WhatsApp, kami bantu dengan senang hati.</p></div>
+    <div class="reveal"><span class="eyebrow">FAQ</span><h2 data-i18n-html="faq_h2">Ada <em>pertanyaan?</em></h2><p class="sub" data-i18n="faq_sub">Belum ketemu jawabannya? Langsung chat Ester di WhatsApp atau DM Instagram @namufoodofficial.</p></div>
     <div class="reveal">
-      <details open><summary data-i18n="q1">Kapan PO ditutup dan kapan pesanan dikirim?</summary><p data-i18n="a1">PO ditutup setiap hari Jumat dan pesanan dikirim pada hari Minggu di minggu yang sama.</p></details>
-      <details><summary data-i18n="q2">Pengiriman ke mana saja?</summary><p data-i18n="a2">Saat ini kami melayani area Jabodetabek (Jakarta, Bogor, Depok, Tangerang, Bekasi).</p></details>
-      <details><summary data-i18n="q3">Berapa harga, ongkir, dan minimal order?</summary><p data-i18n="a3">Harga, ongkir, kurir, dan minimal order bisa ditanyakan langsung ke Ester di WhatsApp +62 851-8306-8096.</p></details>
+      <details open><summary data-i18n="q1">Berapa harganya?</summary><p data-i18n="a1">Daftar harga resmi segera hadir. Sementara itu, silakan tanya langsung ke Ester di WhatsApp +62 851-8306-8096.</p></details>
+      <details><summary data-i18n="q2">Pengiriman ke mana saja dan kapan?</summary><p data-i18n="a2">Info area dan jadwal pengiriman sedang kami finalkan dan segera hadir di website ini serta Instagram @namufoodofficial.</p></details>
+      <details><summary data-i18n="q3">Kapan menu Sei tersedia?</summary><p data-i18n="a3">Sei sedang kami siapkan dan segera hadir. Follow Instagram @namufoodofficial supaya tidak ketinggalan kabarnya.</p></details>
       <details><summary data-i18n="q4">Bagaimana cara menyimpannya?</summary><p data-i18n="a4">Simpan kemasan vacuum di freezer setibanya di rumah. Untuk tips memasak dan penyajian, tanyakan saja ke Ester.</p></details>
       <details><summary data-i18n="q5">Bisa pesan untuk acara atau hantaran?</summary><p data-i18n="a5">Bisa. Ceritakan kebutuhanmu lewat WhatsApp, nanti kami bantu atur paketnya.</p></details>
     </div>
@@ -328,89 +367,94 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
 <section class="cta">
   <div class="wrap reveal">
-    <img class="logo" src="assets/logo.png" alt="Namu Sate House">
-    <h2 data-i18n-html="cta_h2">Jadilah <em>tamu</em> pertama kami minggu ini.</h2>
-    <p data-i18n="cta_p">Slot PO terbatas setiap minggu. Amankan pesananmu sebelum hari Jumat.</p>
-    <a class="btn btn-wa wa-link" href="#" target="_blank" rel="noopener"><svg class="wa-ico"><use href="#wa"/></svg><span data-i18n="cta_main">Pesan via WhatsApp</span></a>
+    <img class="logo" src="assets/logo.png" alt="Namufood · Namu Sate House">
+    <h2 data-i18n-html="cta_h2">Jadilah <em>tamu</em> pertama kami.</h2>
+    <p data-i18n="cta_p">Cobain Sate Taichan Gendut dari Namufood. Chat kami di WhatsApp, dan follow Instagram untuk update menu terbaru.</p>
+    <div class="actions"><a class="btn btn-wa wa-link" href="#" target="_blank" rel="noopener"><svg class="wa-ico"><use href="#wa"/></svg><span data-i18n="cta_main">Pesan via WhatsApp</span></a>
+    <a class="btn btn-ig" href="https://www.instagram.com/namufoodofficial/" target="_blank" rel="noopener"><svg class="ig-ico"><use href="#ig"/></svg><span>@namufoodofficial</span></a></div>
     <div class="contact">WhatsApp: +62 851-8306-8096 (Ester)</div>
   </div>
 </section>
 
-<footer><div class="wrap"><span>© 2026 Namu Sate House</span><span data-i18n="foot">Sate rumahan · PO mingguan · Jabodetabek</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Namufood · Namu Sate House</span><a href="https://www.instagram.com/namufoodofficial/" target="_blank" rel="noopener">Instagram @namufoodofficial</a><span data-i18n="foot">Namu Sate House · Spesialis Sate Taichan Gendut</span></div></footer>
 
 <a class="fab wa-link" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg style="color:#fff"><use href="#wa"/></svg></a>
 
 <script>
 const WA="6285183068096";
 const T={
- id:{nav_story:"Cerita",nav_menu:"Menu",nav_how:"Cara Pesan",cta_short:"Pesan",badge:"PO minggu ini dibuka · tutup Jumat",
-  hero_h1:"Sate rumahan, <em>siap</em> disajikan di rumahmu.",
-  hero_lead:"Sate taichan, sate lilit, sei, dan katsu buatan rumah, dibumbui dengan sepenuh hati, dikemas vacuum-sealed, lalu diantar ke pintumu setiap hari Minggu.",
-  cta_main:"Pesan via WhatsApp",cta_menu:"Lihat Menu →",meta1:"Menu andalan",meta2b:"Jumat",meta2:"PO ditutup",meta3b:"Minggu",meta3:"Hari pengiriman",meta4:"Area kirim",
-  mq:["Sate Taichan","Sate Lilit","Sei","Katsu","Vacuum-Sealed","PO Mingguan","Kirim Jabodetabek"],
+ id:{nav_story:"Cerita",nav_menu:"Menu",nav_vid:"Kisah Taichan",nav_how:"Cara Pesan",cta_short:"Pesan",badge:"Namu Sate House · Spesialis Sate Taichan",
+  hero_h1:"Sate Taichan <em>Gendut</em>, andalan Namufood.",
+  hero_lead:"Potongan ayam gendut dan juicy dengan racikan khusus chef kami, gurih tanpa bumbu kacang, paling nikmat dicocol sambal pedas dan perasan jeruk nipis. Dibuat rumahan dan dikemas vacuum-sealed.",
+  cta_main:"Pesan via WhatsApp",cta_menu:"Lihat Menu →",meta1b:"Taichan Gendut",meta1:"Menu spesialis",meta2:"Rasa tetap terjaga",meta3b:"Segera hadir",meta3:"Info harga & pengiriman",
+  mq:["Sate Taichan Gendut","Spesialis Taichan","Sate Bawah Pohon","Sate Lilit","Katsu","Sei · Coming Soon","Vacuum-Sealed","@namufoodofficial"],
   story_eyebrow:"Cerita kami",story_h2:"Setiap pesanan, kami sambut seperti <em>tamu</em>.",word_small:"menyambut tamu dengan hangat",
   story_p1:"Nama Namu diambil dari kata \"bertamu\". Buat kami, menjamu tamu artinya menyajikan yang terbaik: makanan yang dimasak dengan teliti, bumbu yang tidak setengah-setengah, dan rasa yang bikin orang ingin datang lagi.",
-  story_p2:"Namu lahir pada November 2026 dengan satu misi sederhana: membawa kehangatan dapur rumahan ke meja makanmu. Lewat sistem pre-order, setiap batch disiapkan sesuai pesanan lalu dikemas vacuum-sealed supaya rasanya tetap terjaga sampai tiba di rumahmu.",
+  story_p2:"Namufood lahir pada November 2026 dengan satu misi sederhana: membawa kehangatan dapur rumahan ke meja makanmu. Di bawah Namufood ada Namu Sate House, lini sate kami. Andalannya adalah Sate Taichan Gendut, disiapkan sesuai pesanan lalu dikemas vacuum-sealed supaya rasanya tetap terjaga sampai tiba di rumahmu.",
   chef_t:"Di balik dapur Namu",chef_p:"Chef kami telah teruji lewat pengalaman sebagai asisten Bu Fransisca di acara masak legendaris Indonesia. Pengalaman itulah yang kami bawa ke setiap tusuk sate Namu.",
-  menu_eyebrow:"Menu",menu_h2:"Empat andalan <em>dari dapur Namu</em>",menu_p:"Semua menu dikemas vacuum-sealed dan siap kamu masak atau panaskan di rumah. Harga & isi paket bisa ditanyakan langsung lewat WhatsApp.",
-  tag_best:"Andalan",tag_bali:"Khas Bali",tag_smoke:"Smoky",tag_crispy:"Crispy",price:"Harga via WA",ask:"Tanya →",
-  d_taichan:"Sate putih ala Jakarta yang gurih dan segar, paling nikmat dicocol sambal pedas dan perasan jeruk nipis.",
-  d_lilit:"Daging cincang berbumbu rempah khas Bali, dililitkan di tusuk lebar lalu dibakar hingga harum.",
-  d_sei:"Terinspirasi daging asap khas NTT, dengan rasa smoky yang dalam dan aroma yang menggugah selera.",
+  menu_eyebrow:"Menu",menu_h2:"Menu <em>Namu Sate House</em>",menu_p:"Semua menu dikemas vacuum-sealed dan siap kamu masak atau panaskan di rumah. Detail harga dan pengiriman segera hadir, sementara itu silakan tanya lewat WhatsApp.",
+  tag_best:"Spesialis",tag_bali:"Bumbu Kuning",tag_smoke:"Segera hadir",tag_crispy:"Crispy",price:"Harga segera hadir",ask:"Tanya →",soon:"Coming soon",follow:"Follow IG →",
+  d_taichan:"Menu spesialis Namu Sate House. Sate putih ala Jakarta dengan potongan ayam gendut dan juicy, dibumbui racikan khusus chef kami, paling nikmat dicocol sambal pedas dan perasan jeruk nipis.",
+  d_bp:"Potongan ayam besar ala taichan, tapi dibumbui racikan khas Bali yang kuning dan harum. Buat kamu yang suka taichan dengan rasa rempah.",d_lilit:"Sate lilit berbumbu kuning dengan ukuran kecil yang pas sekali gigit, dibakar hingga harum.",tag_lilit:"Mini",tag_bp:"Bumbu Bali",
+  d_sei:"Menu baru yang sedang kami siapkan. Pantau Instagram kami untuk kabar peluncurannya.",
   d_katsu:"Dibalut panko yang renyah keemasan. Tinggal goreng atau panggang, cocok untuk lauk keluarga maupun bekal.",
-  why_eyebrow:"Kenapa Namu",why_h2:"Rasa rumahan, <em>tanpa repot</em>",
-  w1t:"Dibuat sesuai pesanan",w1p:"Sistem PO membuat setiap batch disiapkan untuk pesanan minggu itu, bukan stok yang menumpuk.",
+  vid_eyebrow:"Kisah Sate Taichan",vid_h2:"Sate kok <em>pucat?</em> Justru itu rahasianya.",
+  vid_p:"Tonton cerita singkat asal-usul sate taichan, sate putih tanpa bumbu kacang yang lahir di Senayan, Jakarta. Versi Namu kami buat lebih gendut dan juicy.",
+  why_eyebrow:"Kenapa Namufood",why_h2:"Rasa rumahan, <em>tanpa repot</em>",
+  w1t:"Dibuat sesuai pesanan",w1p:"Setiap batch disiapkan untuk pesanan yang masuk, bukan stok yang menumpuk.",
   w2t:"Vacuum-sealed",w2p:"Kemasan kedap udara menjaga bumbu meresap dan rasa tetap terjaga hingga tiba di rumahmu.",
   w3t:"Praktis di rumah",w3p:"Simpan di freezer, lalu masak kapan pun kamu mau. Cocok untuk makan keluarga, arisan, atau stok mingguan.",
   w4t:"Siap jadi hantaran",w4p:"Dikemas rapi dalam tas cantik, jadi pas juga untuk dibawa bertamu atau dijadikan hadiah.",
-  how_eyebrow:"Cara pesan",how_h2:"Pesan hari ini, <em>nikmati hari Minggu</em>",how_p:"Sistem pre-order mingguan: sederhana, rapi, dan selalu segar.",
-  s1t:"Pilih menu",s1p:"Taichan, lilit, sei, katsu, atau campur semuanya.",s2t:"Chat WA (Ester)",s2p:"Kirim pesananmu, cek harga, ongkir & minimal order di +62 851-8306-8096.",
-  s3t:"Konfirmasi sebelum Jumat",s3p:"PO ditutup setiap hari Jumat. Pesanan setelahnya masuk batch minggu berikutnya.",s4t:"Diantar hari Minggu",s4p:"Pesanan dikirim vacuum-sealed ke alamatmu di area Jabodetabek.",
-  pill1:"🗓️ PO tutup: Jumat",pill2:"🚚 Kirim: Minggu",pill3:"📍 Jabodetabek",
+  how_eyebrow:"Cara pesan",how_h2:"Pesan <em>semudah chat</em>",how_p:"Detail harga, jadwal, dan area pengiriman sedang kami finalkan dan segera hadir.",
+  s1t:"Pilih menu",s1p:"Sate Taichan Gendut, Sate Bawah Pohon, Sate Lilit, Katsu, atau campur semuanya.",s2t:"Chat WA (Ester)",s2p:"Kirim pesananmu ke +62 851-8306-8096. Ester akan bantu cek ketersediaan.",
+  s3t:"Konfirmasi pesanan",s3p:"Ester akan mengonfirmasi detail pesanan, harga, dan jadwalnya.",s4t:"Pesanan dikirim",s4p:"Pesanan dikirim dalam kemasan vacuum-sealed. Info area dan jadwal kirim segera hadir.",
+  pill1:"💰 Harga: segera hadir",pill2:"🚚 Jadwal & area kirim: segera hadir",
   gal_eyebrow:"Dari dapur kami",gal_h2:"Dikemas rapi, <em>sampai dengan aman</em>",cap1:"Satu paket, banyak pilihan",cap3:"Siap jadi hantaran",cap4:"Vacuum-sealed per menu",
-  faq_h2:"Ada <em>pertanyaan?</em>",faq_sub:"Belum ketemu jawabannya? Langsung chat Ester di WhatsApp, kami bantu dengan senang hati.",
-  q1:"Kapan PO ditutup dan kapan pesanan dikirim?",a1:"PO ditutup setiap hari Jumat dan pesanan dikirim pada hari Minggu di minggu yang sama.",
-  q2:"Pengiriman ke mana saja?",a2:"Saat ini kami melayani area Jabodetabek (Jakarta, Bogor, Depok, Tangerang, Bekasi).",
-  q3:"Berapa harga, ongkir, dan minimal order?",a3:"Harga, ongkir, kurir, dan minimal order bisa ditanyakan langsung ke Ester di WhatsApp +62 851-8306-8096.",
+  faq_h2:"Ada <em>pertanyaan?</em>",faq_sub:"Belum ketemu jawabannya? Langsung chat Ester di WhatsApp atau DM Instagram @namufoodofficial.",
+  q1:"Berapa harganya?",a1:"Daftar harga resmi segera hadir. Sementara itu, silakan tanya langsung ke Ester di WhatsApp +62 851-8306-8096.",
+  q2:"Pengiriman ke mana saja dan kapan?",a2:"Info area dan jadwal pengiriman sedang kami finalkan dan segera hadir di website ini serta Instagram @namufoodofficial.",
+  q3:"Kapan menu Sei tersedia?",a3:"Sei sedang kami siapkan dan segera hadir. Follow Instagram @namufoodofficial supaya tidak ketinggalan kabarnya.",
   q4:"Bagaimana cara menyimpannya?",a4:"Simpan kemasan vacuum di freezer setibanya di rumah. Untuk tips memasak dan penyajian, tanyakan saja ke Ester.",
   q5:"Bisa pesan untuk acara atau hantaran?",a5:"Bisa. Ceritakan kebutuhanmu lewat WhatsApp, nanti kami bantu atur paketnya.",
-  cta_h2:"Jadilah <em>tamu</em> pertama kami minggu ini.",cta_p:"Slot PO terbatas setiap minggu. Amankan pesananmu sebelum hari Jumat.",foot:"Sate rumahan · PO mingguan · Jabodetabek",
-  wa_msg:"Halo Kak Ester, saya mau pesan Namu Sate House untuk PO minggu ini 🙏",wa_item:"Halo Kak Ester, saya mau tanya harga & paket {item} dari Namu Sate House 🙏",
-  title:"Namu Sate House — Sate Rumahan, Siap Disajikan"},
- en:{nav_story:"Our Story",nav_menu:"Menu",nav_how:"How to Order",cta_short:"Order",badge:"This week's PO is open · closes Friday",
-  hero_h1:"Homemade satay, <em>ready</em> for your table.",
-  hero_lead:"Sate taichan, sate lilit, sei, and katsu, made at home and seasoned with heart, vacuum-sealed and delivered to your door every Sunday.",
-  cta_main:"Order on WhatsApp",cta_menu:"See the Menu →",meta1:"Signature dishes",meta2b:"Friday",meta2:"Pre-order closes",meta3b:"Sunday",meta3:"Delivery day",meta4:"Delivery area",
-  mq:["Sate Taichan","Sate Lilit","Sei","Katsu","Vacuum-Sealed","Weekly Pre-Order","Greater Jakarta Delivery"],
+  cta_h2:"Jadilah <em>tamu</em> pertama kami.",cta_p:"Cobain Sate Taichan Gendut dari Namufood. Chat kami di WhatsApp, dan follow Instagram untuk update menu terbaru.",foot:"Namu Sate House · Spesialis Sate Taichan Gendut",
+  wa_msg:"Halo Kak Ester, saya mau pesan Sate Taichan Gendut dari Namufood 🙏",wa_item:"Halo Kak Ester, saya mau tanya harga & paket {item} dari Namufood 🙏",
+  title:"Namufood — Spesialis Sate Taichan Gendut | Namu Sate House"},
+ en:{nav_story:"Our Story",nav_menu:"Menu",nav_vid:"Taichan Story",nav_how:"How to Order",cta_short:"Order",badge:"Namu Sate House · Sate Taichan Specialist",
+  hero_h1:"Sate Taichan <em>Gendut</em>, the pride of Namufood.",
+  hero_lead:"Chunky, juicy chicken skewers in our chef's special marinade, savoury without peanut sauce, best dipped in fiery sambal with a squeeze of lime. Homemade and vacuum-sealed.",
+  cta_main:"Order on WhatsApp",cta_menu:"See the Menu →",meta1b:"Taichan Gendut",meta1:"Our specialty",meta2:"Flavour locked in",meta3b:"Coming soon",meta3:"Pricing & delivery info",
+  mq:["Sate Taichan Gendut","Taichan Specialist","Sate Bawah Pohon","Sate Lilit","Katsu","Sei · Coming Soon","Vacuum-Sealed","@namufoodofficial"],
   story_eyebrow:"Our story",story_h2:"We welcome every order like a <em>guest</em>.",word_small:"to welcome guests warmly",
   story_p1:"Namu comes from the Indonesian word \"bertamu\", visiting as a guest. To us, hosting means serving our very best: food cooked with care, seasoning that never cuts corners, and flavour that brings people back.",
-  story_p2:"Namu was born in November 2026 with a simple mission: to bring the warmth of a home kitchen to your table. Through weekly pre-orders, every batch is prepared to order and vacuum-sealed so the flavour stays intact all the way to your home.",
+  story_p2:"Namufood was born in November 2026 with a simple mission: to bring the warmth of a home kitchen to your table. Namu Sate House is our satay line, and its signature is Sate Taichan Gendut, prepared to order and vacuum-sealed so the flavour stays intact all the way to your home.",
   chef_t:"Behind the Namu kitchen",chef_p:"Our chef earned their skills as an assistant to Bu Fransisca on one of Indonesia's legendary cooking shows, and brings that experience to every skewer.",
-  menu_eyebrow:"Menu",menu_h2:"Four favourites <em>from the Namu kitchen</em>",menu_p:"Every item comes vacuum-sealed, ready to cook or reheat at home. Ask us on WhatsApp for prices and pack sizes.",
-  tag_best:"Signature",tag_bali:"Balinese",tag_smoke:"Smoky",tag_crispy:"Crispy",price:"Price on WhatsApp",ask:"Ask →",
-  d_taichan:"Jakarta's iconic white satay: savoury and fresh, best dipped in fiery sambal with a squeeze of lime.",
-  d_lilit:"Minced meat blended with Balinese spices, wrapped around wide skewers and grilled until fragrant.",
-  d_sei:"Inspired by the smoked meat of East Nusa Tenggara, with deep smoky flavour and an irresistible aroma.",
+  menu_eyebrow:"Menu",menu_h2:"The <em>Namu Sate House</em> menu",menu_p:"Every item comes vacuum-sealed, ready to cook or reheat at home. Pricing and delivery details are coming soon. In the meantime, ask us on WhatsApp.",
+  tag_best:"Specialty",tag_bali:"Yellow Spice",tag_smoke:"Coming soon",tag_crispy:"Crispy",price:"Price coming soon",ask:"Ask →",soon:"Coming soon",follow:"Follow IG →",
+  d_taichan:"Namu Sate House's specialty. Jakarta-style white satay with chunky, juicy chicken in our chef's special marinade, best dipped in fiery sambal with a squeeze of lime.",
+  d_bp:"Chunky taichan-style chicken skewers in a golden Balinese spice blend. For taichan lovers who want more spice.",d_lilit:"Small, bite-sized sate lilit in a golden yellow spice blend, grilled until fragrant.",tag_lilit:"Mini",tag_bp:"Balinese Spice",
+  d_sei:"A new dish we're still perfecting. Follow our Instagram for launch news.",
   d_katsu:"Coated in golden, crunchy panko. Just fry or bake, perfect for family meals or lunch boxes.",
-  why_eyebrow:"Why Namu",why_h2:"Home-cooked flavour, <em>zero hassle</em>",
-  w1t:"Made to order",w1p:"Our pre-order system means each batch is prepared for that week's orders, not left sitting as stock.",
+  vid_eyebrow:"The Taichan Story",vid_h2:"Pale satay? <em>That's the secret.</em>",
+  vid_p:"Watch the short story of sate taichan, the white satay without peanut sauce that was born in Senayan, Jakarta. Namu's version is chunkier and juicier.",
+  why_eyebrow:"Why Namufood",why_h2:"Home-cooked flavour, <em>zero hassle</em>",
+  w1t:"Made to order",w1p:"Each batch is prepared for the orders that come in, not left sitting as stock.",
   w2t:"Vacuum-sealed",w2p:"Airtight packaging locks in the seasoning and keeps the flavour intact until it reaches you.",
   w3t:"Easy at home",w3p:"Keep it in the freezer and cook whenever you like. Great for family dinners, gatherings, or weekly stock.",
   w4t:"Gift-ready",w4p:"Neatly packed in a pretty bag, perfect to bring when visiting or to give as a gift.",
-  how_eyebrow:"How to order",how_h2:"Order today, <em>enjoy on Sunday</em>",how_p:"A weekly pre-order system that is simple, tidy, and always fresh.",
-  s1t:"Pick your menu",s1p:"Taichan, lilit, sei, katsu, or mix them all.",s2t:"Chat WA (Ester)",s2p:"Send your order and ask about prices, delivery fee & minimum order at +62 851-8306-8096.",
-  s3t:"Confirm before Friday",s3p:"Pre-orders close every Friday. Later orders join the following week's batch.",s4t:"Delivered on Sunday",s4p:"Your order arrives vacuum-sealed anywhere in Greater Jakarta.",
-  pill1:"🗓️ PO closes: Friday",pill2:"🚚 Delivery: Sunday",pill3:"📍 Greater Jakarta",
+  how_eyebrow:"How to order",how_h2:"Ordering is <em>as easy as a chat</em>",how_p:"Pricing, schedule and delivery area are being finalised and coming soon.",
+  s1t:"Pick your menu",s1p:"Sate Taichan Gendut, Sate Bawah Pohon, Sate Lilit, Katsu, or mix them all.",s2t:"Chat WA (Ester)",s2p:"Send your order to +62 851-8306-8096. Ester will check availability for you.",
+  s3t:"Confirm your order",s3p:"Ester will confirm your order details, price and schedule.",s4t:"Order delivered",s4p:"Your order arrives vacuum-sealed. Delivery area and schedule info coming soon.",
+  pill1:"💰 Pricing: coming soon",pill2:"🚚 Schedule & area: coming soon",
   gal_eyebrow:"From our kitchen",gal_h2:"Packed with care, <em>delivered safely</em>",cap1:"One bundle, plenty of choice",cap3:"Gift-ready",cap4:"Vacuum-sealed per item",
-  faq_h2:"Got <em>questions?</em>",faq_sub:"Can't find your answer? Chat with Ester on WhatsApp. We're happy to help.",
-  q1:"When does the pre-order close and when is delivery?",a1:"Pre-orders close every Friday and are delivered on Sunday of the same week.",
-  q2:"Where do you deliver?",a2:"We currently deliver across Greater Jakarta (Jakarta, Bogor, Depok, Tangerang, Bekasi).",
-  q3:"What about prices, delivery fees and minimum order?",a3:"Ask Ester on WhatsApp at +62 851-8306-8096 for prices, delivery fees, courier and minimum order.",
+  faq_h2:"Got <em>questions?</em>",faq_sub:"Can't find your answer? Chat with Ester on WhatsApp or DM us on Instagram @namufoodofficial.",
+  q1:"How much does it cost?",a1:"Our official price list is coming soon. In the meantime, ask Ester on WhatsApp at +62 851-8306-8096.",
+  q2:"Where and when do you deliver?",a2:"Delivery area and schedule are being finalised and will be announced here and on Instagram @namufoodofficial soon.",
+  q3:"When will Sei be available?",a3:"Sei is in the works and coming soon. Follow @namufoodofficial on Instagram so you don't miss it.",
   q4:"How should I store it?",a4:"Put the vacuum packs in the freezer as soon as they arrive. Ask Ester for cooking and serving tips.",
   q5:"Can I order for events or gifts?",a5:"Absolutely. Tell us what you need on WhatsApp and we'll help put a package together.",
-  cta_h2:"Be our <em>guest</em> this week.",cta_p:"Pre-order slots are limited each week. Secure yours before Friday.",foot:"Homemade satay · Weekly pre-order · Greater Jakarta",
-  wa_msg:"Hi Ester, I'd like to order from Namu Sate House for this week's pre-order 🙏",wa_item:"Hi Ester, I'd like to ask about the price & packs for {item} from Namu Sate House 🙏",
-  title:"Namu Sate House — Homemade Satay, Ready to Serve"}
+  cta_h2:"Be our <em>first guest</em>.",cta_p:"Try Sate Taichan Gendut from Namufood. Chat with us on WhatsApp and follow our Instagram for the latest menu updates.",foot:"Namu Sate House · Sate Taichan Gendut Specialist",
+  wa_msg:"Hi Ester, I'd like to order Sate Taichan Gendut from Namufood 🙏",wa_item:"Hi Ester, I'd like to ask about the price & packs for {item} from Namufood 🙏",
+  title:"Namufood — Sate Taichan Gendut Specialist | Namu Sate House"}
 };
 const waURL=t=>"https://wa.me/"+WA+"?text="+encodeURIComponent(t);
 function setLang(l){
